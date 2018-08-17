@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/basically
+    docker:
+      - image: circleci/node:10.4.1
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: install_packages
+          command: yarn install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - ./node_modules
+      - run:
+          name: test
+          command: yarn test
+      - run:
+          name: lint
+          command: yarn lint

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button matches the snapshot 1`] = `
+.c0 {
+  background: #DDD;
+  border-radius: 3px;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: 500;
+  height: 2.6875rem;
+  outline: none;
+  padding: 0 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+<button
+  className="c0"
+>
+  Click Me
+</button>
+`;
