@@ -14,7 +14,7 @@
     "start": "start-storybook -p 9001",
     "test": "tsc --noEmit && yarn run lint && jest",
     "lint": "tslint ./packages/**/*.ts index.ts",
-    "prettier": "prettier --write packages/**/*.{ts,tsx,js} *.{js,ts,tsx}"
+    "prettier": "prettier --write packages/**/*.{ts,tsx,js} *.{js,ts,tsx} .storybook/*.js"
   },
   "devDependencies": {
     "@storybook/addon-info": "^3.4.8",
