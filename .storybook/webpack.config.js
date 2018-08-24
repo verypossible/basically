@@ -1,15 +1,17 @@
-const path = require("path");
+const {
+  CheckerPlugin,
+  TsConfigPathsPlugin,
+} = require('awesome-typescript-loader');
 
-module.exports = (baseConfig, env, config) => {
-  config.module.rules.push({
+module.exports = (baseConfig, env, defaultConfig) => {
+  defaultConfig.module.rules.push({
     test: /\.(ts|tsx)$/,
-    include: path.resolve(__dirname, '..'),
-    use: [
-      require.resolve('awesome-typescript-loader'),
-      require.resolve('react-docgen-typescript-loader'),
-    ],
+    loader: require.resolve('awesome-typescript-loader'),
+    exclude: /node_modules/,
   });
+  defaultConfig.resolve.extensions.push('.ts', '.tsx');
+  defaultConfig.resolve.plugins = [new TsConfigPathsPlugin()];
+  defaultConfig.plugins.push(new CheckerPlugin());
 
-  config.resolve.extensions.push(".ts", ".tsx");
-  return config;
+  return defaultConfig;
 };

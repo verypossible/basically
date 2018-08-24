@@ -104,10 +104,6 @@
     "@storybook/channels" "4.0.0-alpha.3"
     global "^4.3.2"
 
-"@storybook/addons@^3.3.0":
-  version "3.4.10"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-3.4.10.tgz#13298cdcb7ccc396321b1336b9785b69273a022d"
-
 "@storybook/channel-postmessage@4.0.0-alpha.3":
   version "4.0.0-alpha.3"
   resolved "https://registry.yarnpkg.com/@storybook/channel-postmessage/-/channel-postmessage-4.0.0-alpha.3.tgz#13416e27c736dea674931d42cabec6b48e46370e"

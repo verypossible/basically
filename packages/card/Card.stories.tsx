@@ -26,7 +26,7 @@ const MyCard = styled(Card)\`
 \`\`\`
 `);
 
-const stories = storiesOf('Components/Card', module);
+const stories = storiesOf('Card', module);
 stories.addDecorator(withKnobs);
 
 stories.add(

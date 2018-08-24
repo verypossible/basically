@@ -28,7 +28,7 @@ const MyButton = styled(Button)\`
 \`\`\`
 `);
 
-const stories = storiesOf('Components/Button', module);
+const stories = storiesOf('Button', module);
 stories.addDecorator(withKnobs);
 
 stories.add(

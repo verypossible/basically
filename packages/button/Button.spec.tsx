@@ -15,6 +15,6 @@ describe('Button', () => {
     const onClick = jest.fn();
     const tree = shallow(<Button onClick={onClick}>Click Me</Button>);
     tree.find('button').simulate('click');
-    expect(onClick.mock.calls.length).toBe(1);
+    expect(onClick).toHaveBeenCalled();
   });
 });
