@@ -2,12 +2,12 @@
 
 exports[`Button matches the snapshot 1`] = `
 .c0 {
-  background: #DDD;
+  background: #ddd;
   border-radius: 3px;
   border: none;
   color: #000;
   cursor: pointer;
-  font-size: .8rem;
+  font-size: 0.8rem;
   font-weight: 500;
   height: 2.6875rem;
   outline: none;

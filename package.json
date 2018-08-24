@@ -1,72 +1,66 @@
 {
   "name": "basically",
-  "version": "0.1.0",
-  "description": "Simple Pre Styled React Components",
-  "main": "dist/index.js",
+  "version": "1.0.0",
+  "description": "React components used by Very Possible",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "repository": "git@github.com:verypossible/basically.git",
-  "author": "Very",
+  "author": "Very Possible",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "tsc",
     "generate": "node ./utils/generate.js",
-    "lint": "tslint -c tslint.json -p tsconfig.json",
-    "precommit": "yarn test && yarn lint",
+    "precommit": "lint-staged",
     "start": "start-storybook -p 9001",
-    "test": "jest"
+    "test": "tsc --noEmit && yarn run lint && jest",
+    "lint": "tslint ./packages/**/*.ts index.ts",
+    "prettier": "prettier --write packages/**/*.{ts,tsx,js} *.{js,ts,tsx}"
   },
   "devDependencies": {
     "@storybook/addon-info": "^3.4.8",
     "@storybook/addon-knobs": "^3.4.8",
+    "@storybook/addons": "^3.3.0",
     "@storybook/react": "4.0.0-alpha.3",
     "@types/enzyme": "^3.1.11",
     "@types/jest": "^23.1.1",
-    "@types/react": "^16.4.1",
     "@types/react-dom": "^16.0.6",
+    "@types/react": "^16.4.1",
+    "@types/storybook__addon-info": "^3.2.3",
     "@types/storybook__addon-knobs": "^3.3.1",
     "@types/storybook__react": "^3.0.7",
     "awesome-typescript-loader": "^5.2.0",
     "chalk": "^2.4.1",
-    "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme": "^3.3.0",
     "husky": "^0.14.3",
-    "jest": "^23.1.0",
     "jest-environment-enzyme": "^6.0.2",
     "jest-enzyme": "^6.0.2",
     "jest-styled-components": "^5.0.1",
+    "jest": "^23.1.0",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
     "react-docgen-typescript-loader": "^2.1.1",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
+    "react-dom": "^16.4.1",
+    "react": "^16.4.1",
+    "styled-components": "^3.3.3",
     "ts-jest": "^22.4.6",
-    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.8.0",
+    "tslint-config-package": "^1.0.3",
     "tslint-config-prettier": "^1.13.0",
+    "tslint-no-circular-imports": "^0.3.0",
+    "tslint": "^5.10.0",
     "typescript": "^2.9.2"
   },
-  "dependencies": {
-    "@types/storybook__addon-info": "^3.2.3",
+  "peerDependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "styled-components": "^3.3.3"
   },
-  "jest": {
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "testRegex": "(test|spec).tsx?$",
-    "moduleDirectories": [
-      "<rootDir>/components",
-      "node_modules"
-    ],
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json"
-    ],
-    "setupTestFrameworkScriptFile": "./enzyme.setup.js"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn test && yarn lint"
-    }
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

@@ -1,4 +1,4 @@
-import { withInfo } from '@storybook/addon-info'
+import { withInfo } from '@storybook/addon-info';
 
 const styles = {
   header: {
@@ -21,15 +21,14 @@ const styles = {
     lineHeight: '2',
     padding: '0px 5px',
   },
-}
+};
 
-const info = (text: string) => (
+const info = (text: string) =>
   withInfo({
     inline: true,
     source: false,
     styles,
     text,
-  })
-)
+  });
 
-export default info
+export default info;

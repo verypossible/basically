@@ -1,4 +1,6 @@
 {
+  "baseUrl": "types",
+  "typeRoots": ["types"],
   "compilerOptions": {
     "noImplicitAny": true,
     "noUnusedLocals": true,
@@ -6,21 +8,16 @@
     "preserveConstEnums": true,
     "sourceMap": true,
     "target": "es5",
-    "module": "es2015",
     "outDir": "./dist",
     "moduleResolution": "node",
     "lib": ["es2015", "es2017", "dom"],
     "allowSyntheticDefaultImports": true,
     "jsx": "react",
-    "baseUrl": "./index.ts"
+    "baseUrl": ".",
+    "paths": {
+      "@basically/*": ["packages/*"]
+    }
   },
-  "include": [
-    "index.ts",
-    "components/**/*.ts",
-    "components/**/*.tsx",
-    "utils/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["index.ts", "packages/**/*", "packages/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
